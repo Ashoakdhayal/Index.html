@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कृषि पर्यवेक्षक भर्ती पेपर 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #FF6B00;
+    --deep-saffron: #E85D00;
+    --green: #006B3C;
+    --deep-green: #004D2B;
+    --gold: #D4AF37;
+    --light-gold: #F5E6A3;
+    --cream: #FFF8EE;
+    --dark: #1A0A00;
+    --text: #2C1500;
+    --border: #D4AF37;
+    --correct: #1B7A3E;
+    --wrong: #C0392B;
+    --unanswered: #7F8C8D;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Watermark */
+  body::before {
+    content: "RAJASTHAN OLD PAPER";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: rgba(255, 107, 0, 0.06);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    letter-spacing: 8px;
+  }
+
+  /* Repeated watermark pattern */
+  .watermark-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .watermark-bg span {
+    position: absolute;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255, 107, 0, 0.05);
+    letter-spacing: 2px;
+    transform: rotate(-35deg);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--deep-saffron) 40%, #8B1A00 100%);
+    border-radius: 16px;
+    padding: 28px 24px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(255,107,0,0.35);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--gold);
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 4px 16px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .header h1 {
+    font-size: clamp(16px, 4vw, 24px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.3;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    margin-bottom: 6px;
+  }
+  .header-sub {
+    color: var(--light-gold);
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .rajasthan-stripe {
+    display: flex;
+    height: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 16px;
+  }
+  .rajasthan-stripe div:nth-child(1) { flex:1; background:#FF6B00; }
+  .rajasthan-stripe div:nth-child(2) { flex:1; background:#fff; }
+  .rajasthan-stripe div:nth-child(3) { flex:1; background:#006B3C; }
+
+  /* Name Card */
+  .name-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1.5px solid var(--border);
+    box-shadow: 0 4px 16px rgba(212,175,55,0.15);
+  }
+  .name-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--saffron);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .name-card h3::before { content: '👤'; }
+  .name-input-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .name-input-row input {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px 14px;
+    border: 2px solid #E5D5B0;
+    border-radius: 8px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .name-input-row input:focus { border-color: var(--saffron); }
+  .btn-start {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, var(--saffron), var(--deep-saffron));
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(255,107,0,0.3);
+  }
+  .btn-start:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(255,107,0,0.4); }
+
+  /* Info Strip */
+  .info-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .info-box {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(212,175,55,0.1);
+  }
+  .info-box .val {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--saffron);
+  }
+  .info-box .lbl {
+    font-size: 11px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  /* Timer */
+  .timer-bar {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(212,175,55,0.1);
+  }
+  .timer-display {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: 2px;
+  }
+  .timer-display.warning { color: var(--wrong); animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+  .timer-label { font-size: 12px; color: #888; }
+  .progress-wrap { flex: 1; margin: 0 16px; }
+  .progress-bar { height: 8px; background: #EEE; border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--saffron)); border-radius: 4px; transition: width 1s linear; }
+  .progress-text { font-size: 11px; color: #888; margin-top: 4px; text-align: right; }
+
+  /* Question Card */
+  .question-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 14px;
+    border: 1.5px solid #E5D5B0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .question-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--saffron), var(--gold));
+    border-radius: 4px 0 0 4px;
+  }
+  .q-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .q-num {
+    background: linear-gradient(135deg, var(--saffron), var(--deep-saffron));
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .q-text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--text);
+  }
+  .q-sub {
+    font-size: 12px;
+    color: #555;
+    margin: 6px 0 12px 0;
+    padding-left: 4px;
+    line-height: 1.5;
+    border-left: 2px solid var(--light-gold);
+    padding-left: 8px;
+  }
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  @media (max-width: 600px) { .options-grid { grid-template-columns: 1fr; } }
+  .option-btn {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 12px;
+    border: 2px solid #E8D8B0;
+    border-radius: 8px;
+    background: var(--cream);
+    cursor: pointer;
+    transition: all 0.18s;
+    text-align: left;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .option-btn:hover:not(:disabled) {
+    border-color: var(--saffron);
+    background: #FFF3E8;
+    transform: translateX(2px);
+  }
+  .option-btn.selected {
+    border-color: var(--saffron);
+    background: #FFF3E8;
+  }
+  .option-btn.correct {
+    border-color: var(--correct);
+    background: #E8F5EE;
+    color: var(--correct);
+    font-weight: 600;
+  }
+  .option-btn.wrong {
+    border-color: var(--wrong);
+    background: #FDEAEA;
+    color: var(--wrong);
+  }
+  .option-btn:disabled { cursor: not-allowed; }
+  .opt-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    min-width: 20px;
+    color: var(--saffron);
+    flex-shrink: 0;
+  }
+  .option-btn.correct .opt-label { color: var(--correct); }
+  .option-btn.wrong .opt-label { color: var(--wrong); }
+
+  /* Solution Box */
+  .solution-box {
+    display: none;
+    margin-top: 12px;
+    padding: 12px 14px;
+    background: linear-gradient(135deg, #F0FFF6, #E8F8EE);
+    border: 1.5px solid #A8DFC0;
+    border-radius: 8px;
+    font-size: 12.5px;
+    color: #1B4D2E;
+    line-height: 1.6;
+  }
+  .solution-box strong { color: var(--correct); }
+  .solution-box .sol-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--correct);
+    margin-bottom: 6px;
+  }
+
+  /* Table styles for matching questions */
+  .match-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 8px 0 12px;
+    font-size: 12px;
+  }
+  .match-col { background: #FFF8EE; border: 1px solid #E5D5B0; border-radius: 6px; padding: 8px 10px; }
+  .match-col h5 { font-size: 11px; color: var(--saffron); margin-bottom: 6px; font-weight: 700; letter-spacing: 1px; }
+  .match-col p { padding: 3px 0; border-bottom: 1px dashed #E5D5B0; line-height: 1.4; }
+  .match-col p:last-child { border: none; }
+
+  /* Submit Button */
+  .submit-section {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    border: 1.5px solid var(--border);
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(212,175,55,0.15);
+  }
+  .btn-submit {
+    padding: 14px 48px;
+    background: linear-gradient(135deg, var(--green), var(--deep-green));
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 6px 20px rgba(0,107,60,0.3);
+    letter-spacing: 1px;
+  }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,107,60,0.4); }
+  .btn-submit:disabled { background: #999; cursor: not-allowed; transform: none; }
+
+  /* Result Card */
+  .result-card {
+    display: none;
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 20px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 8px 32px rgba(212,175,55,0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .result-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--saffron), var(--gold), var(--green));
+  }
+  .result-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--saffron);
+    margin-bottom: 6px;
+  }
+  .result-score-big {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1;
+    margin: 12px 0;
+  }
+  .result-out-of { font-size: 16px; color: #888; }
+  .result-grade {
+    display: inline-block;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 12px 0;
+  }
+  .result-stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .stat-box {
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .stat-box.c { background: #E8F5EE; color: var(--correct); }
+  .stat-box.w { background: #FDEAEA; color: var(--wrong); }
+  .stat-box.u { background: #F0F0F0; color: var(--unanswered); }
+  .stat-box .big { font-family: 'Rajdhani', sans-serif; font-size: 32px; font-weight: 700; display: block; }
+  .stat-box .sm { font-size: 11px; }
+
+  /* Rank */
+  .rank-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--gold), #B8960C);
+    color: var(--dark);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+
+  /* Leaderboard */
+  .leaderboard {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1.5px solid var(--border);
+    box-shadow: 0 4px 16px rgba(212,175,55,0.12);
+    display: none;
+  }
+  .leaderboard h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .lb-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: var(--cream);
+    border: 1px solid #E5D5B0;
+    transition: all 0.2s;
+  }
+  .lb-row.current { background: #FFF3E8; border-color: var(--saffron); }
+  .lb-rank {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    min-width: 36px;
+    text-align: center;
+  }
+  .lb-rank.gold { color: #D4AF37; }
+  .lb-rank.silver { color: #A8A8A8; }
+  .lb-rank.bronze { color: #CD7F32; }
+  .lb-rank.other { color: #888; }
+  .lb-name { flex: 1; font-weight: 600; font-size: 14px; }
+  .lb-score {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--saffron);
+  }
+  .lb-pct { font-size: 11px; color: #888; }
+
+  /* Join Banner */
+  .join-banner {
+    background: linear-gradient(135deg, var(--green), var(--deep-green));
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    box-shadow: 0 6px 20px rgba(0,107,60,0.25);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .join-text h4 { color: #fff; font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .join-text p { color: rgba(255,255,255,0.8); font-size: 12px; }
+  .btn-join {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--gold);
+    color: var(--dark);
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.2s;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(212,175,55,0.4);
+  }
+  .btn-join:hover { transform: translateY(-1px); background: #E5C84A; }
+
+  /* View Solutions */
+  .btn-solutions {
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--saffron), var(--deep-saffron));
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 14px rgba(255,107,0,0.3);
+    margin: 6px;
+  }
+  .btn-solutions:hover { transform: translateY(-1px); }
+  .btn-restart {
+    padding: 12px 28px;
+    background: #fff;
+    color: var(--text);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: 6px;
+  }
+  .btn-restart:hover { background: var(--cream); }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 11px;
+    color: #aaa;
+  }
+
+  /* Answered indicator */
+  .answered-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .answered-dot.done { background: var(--correct); }
+  .answered-dot.skip { background: #DDD; }
+
+  /* Question navigator */
+  .q-nav {
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 14px;
+    border: 1.5px solid var(--border);
+    display: none;
+  }
+  .q-nav-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+  .q-nav-btn {
+    width: 34px; height: 34px;
+    border-radius: 6px;
+    border: 1.5px solid #E5D5B0;
+    background: var(--cream);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--text);
+  }
+  .q-nav-btn.ans { background: var(--saffron); color: #fff; border-color: var(--saffron); }
+  .q-nav-btn.active { outline: 2px solid var(--gold); }
+
+  .hidden { display: none !important; }
+
+  /* Page: start vs test vs result */
+  #page-start {}
+  #page-test { display: none; }
+  #page-result { display: none; }
+</style>
+</head>
+<body>
+
+<!-- Watermark pattern -->
+<div class="watermark-bg" id="wmBg"></div>
+
+<div class="container">
+
+  <!-- Header (always visible) -->
+  <div class="header">
+    <div class="header-badge">📜 RAJASTHAN OLD PAPER</div>
+    <h1>🌾 कृषि पर्यवेक्षक भर्ती पेपर 2026</h1>
+    <p class="header-sub">विशेष राजस्थान के टॉपिक | कुल 26 प्रश्न | 30 मिनट</p>
+    <div class="rajasthan-stripe"><div></div><div></div><div></div></div>
+  </div>
+
+  <!-- Join Banner -->
+  <div class="join-banner">
+    <div class="join-text">
+      <h4>📱 हमारा ऐप डाउनलोड करें — FREE Mock Tests!</h4>
+      <p>राजस्थान की सभी परीक्षाओं के लिए एक ही ऐप</p>
+    </div>
+    <a href="https://play.google.com/store/apps/details?id=co.griffin.qpxbh" target="_blank" class="btn-join">
+      ▶ JOIN NOW
+    </a>
+  </div>
+
+  <!-- START PAGE -->
+  <div id="page-start">
+    <div class="name-card">
+      <h3>अपना नाम दर्ज करें</h3>
+      <div class="name-input-row">
+        <input type="text" id="studentName" placeholder="जैसे: Ramesh Meena" maxlength="40"/>
+        <button class="btn-start" onclick="startTest()">परीक्षा शुरू करें →</button>
+      </div>
+    </div>
+
+    <div class="info-strip">
+      <div class="info-box">
+        <div class="val">26</div>
+        <div class="lbl">प्रश्न</div>
+      </div>
+      <div class="info-box">
+        <div class="val">30</div>
+        <div class="lbl">मिनट</div>
+      </div>
+      <div class="info-box">
+        <div class="val">4</div>
+        <div class="lbl">विकल्प प्रति प्रश्न</div>
+      </div>
+    </div>
+
+    <div class="question-card" style="text-align:center;padding:20px;">
+      <p style="font-size:13px;color:#666;line-height:1.8;">
+        📌 यह टेस्ट <b>राजस्थान कृषि पर्यवेक्षक भर्ती 2026</b> के पैटर्न पर आधारित है।<br>
+        ✅ सभी प्रश्न <b>Old Paper</b> से चुने गए हैं।<br>
+        📚 परीक्षा समाप्त होने के बाद <b>Solutions देखें</b> बटन उपलब्ध होगा।<br>
+        🏆 <b>Rank</b> देखें और अपना प्रदर्शन जानें।
+      </p>
+    </div>
+  </div>
+
+  <!-- TEST PAGE -->
+  <div id="page-test">
+    <!-- Timer -->
+    <div class="timer-bar">
+      <div>
+        <div class="timer-label">शेष समय</div>
+        <div class="timer-display" id="timerDisplay">30:00</div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:100%"></div></div>
+        <div class="progress-text" id="progressText">0 / 26 उत्तर दिए</div>
+      </div>
+      <div style="text-align:right;">
+        <div class="timer-label" id="currentStudentName" style="color:var(--saffron);font-weight:600;"></div>
+        <div class="timer-label">परीक्षार्थी</div>
+      </div>
+    </div>
+
+    <!-- Questions rendered here -->
+    <div id="questionsContainer"></div>
+
+    <div class="submit-section">
+      <p style="font-size:13px;color:#888;margin-bottom:14px;">सभी प्रश्नों का उत्तर देने के बाद सबमिट करें</p>
+      <button class="btn-submit" id="submitBtn" onclick="submitTest()">📊 परीक्षा सबमिट करें</button>
+    </div>
+  </div>
+
+  <!-- RESULT PAGE -->
+  <div id="page-result">
+    <div class="result-card" id="resultCard" style="display:block;">
+      <div class="result-name" id="resultName"></div>
+      <div style="color:#888;font-size:13px;">आपका स्कोर</div>
+      <div class="result-score-big" id="resultScore">0</div>
+      <div class="result-out-of">/ 26 प्रश्न</div>
+      <div class="result-grade" id="resultGrade"></div>
+      <div class="result-stats">
+        <div class="stat-box c"><span class="big" id="resCorrect">0</span><span class="sm">✅ सही</span></div>
+        <div class="stat-box w"><span class="big" id="resWrong">0</span><span class="sm">❌ गलत</span></div>
+        <div class="stat-box u"><span class="big" id="resSkip">0</span><span class="sm">⬜ अनुत्तरित</span></div>
+      </div>
+      <div class="rank-badge" id="rankBadge">🏆 रैंक: —</div>
+      <br><br>
+      <button class="btn-solutions" onclick="showSolutions()">🔍 Solutions देखें</button>
+      <button class="btn-restart" onclick="restartTest()">🔄 दोबारा दें</button>
+    </div>
+
+    <div class="leaderboard" id="leaderboard">
+      <h3>🏆 लीडरबोर्ड (Top Rankers)</h3>
+      <div id="lbList"></div>
+    </div>
+
+    <div id="solutionsArea" style="display:none;">
+      <h3 style="margin-bottom:14px;color:var(--text);font-size:15px;font-weight:700;">📋 सभी प्रश्नों के उत्तर व व्याख्या</h3>
+      <div id="solutionsContainer"></div>
+    </div>
+  </div>
+
+  <!-- Bottom Join -->
+  <div class="join-banner">
+    <div class="join-text">
+      <h4>🎯 ज़्यादा Practice करें — App पर FREE!</h4>
+      <p>Daily Mock Tests • Previous Year Papers • Current Affairs</p>
+    </div>
+    <a href="https://play.google.com/store/apps/details?id=co.griffin.qpxbh" target="_blank" class="btn-join">▶ Download App</a>
+  </div>
+
+  <div class="footer">© 2026 Rajasthan Old Paper | कृषि पर्यवेक्षक भर्ती विशेष | All Rights Reserved</div>
+</div>
+
+<script>
+// ===================== DATA =====================
+const questions = [
+  {
+    num: 4,
+    text: "सूची-I को सूची-II से सुमेलित करें :",
+    sub: `सूची-I: (a) खो (b) बैराठ (c) देवगढ़ पहाड़ी (d) रिसा पोक
+सूची-II: (i) अलवर (ii) जयपुर (iii) भीलवाड़ा (iv) जालोर`,
+    options: [
+      "(A) (a)-(ii), (b)-(i), (c)-(iii), (d)-(iv)",
+      "(B) (a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)",
+      "(C) (a)-(ii), (b)-(i), (c)-(iv), (d)-(iii)",
+      "(D) (a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)"
+    ],
+    correct: 0,
+    solution: "सही उत्तर (A): 'खो' चोटी जयपुर (920 मी.) में है। बैराठ ऐतिहासिक रूप से जयपुर में है। देवगढ़ पहाड़ियां भीलवाड़ा-राजसमंद में हैं और रिसा पोक (रोजा भाकर) जालोर में है।"
+  },
+  {
+    num: 5,
+    text: "अभिकथन A : संरक्षण आरक्षीत क्षेत्र भूपरिदृश्य, वनस्पति, प्राणि और पर्यावास के संरक्षण के लिए घोषित किए जाते हैं।",
+    sub: "कारण R : मुहाना, रतनगढ़ और अजमेर में शहरी वन बाग विकसित करने की एक योजना है।",
+    options: [
+      "(A) A सही नहीं है लेकिन R सही है।",
+      "(B) A और R दोनों सही हैं और R, A की सही व्याख्या है।",
+      "(C) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है।",
+      "(D) A सही है लेकिन R सही नहीं है।"
+    ],
+    correct: 2,
+    solution: "सही उत्तर (C): A बिल्कुल सही है। R भी राजस्थान सरकार की 'शहरी वन बाग' योजना के संदर्भ में सही है, किन्तु R, A का सही कारण स्पष्ट नहीं करता।"
+  },
+  {
+    num: 9,
+    text: "कौन सी झील अपवाहन के कारण निर्मित 'प्लाया' झील का उदाहरण है ?",
+    sub: "",
+    options: [
+      "(A) सांभर",
+      "(B) लूणकरणसर",
+      "(C) डीडवाना",
+      "(D) पचपदरा"
+    ],
+    correct: 2,
+    solution: "सही उत्तर (C) डीडवाना: पवन के अपवाहन (हवा द्वारा मिट्टी उड़ाने) से बने गर्तों में जल भरने से प्लाया झीलें बनती हैं। डीडवाना झील इसका प्रमुख उदाहरण है।"
+  },
+  {
+    num: 11,
+    text: "राजस्थान के निम्नलिखित संतों को कालक्रमानुसार व्यवस्थित करें :",
+    sub: "(a) पीपा  (b) लालदास  (c) दादूदयाल  (d) धन्ना",
+    options: [
+      "(A) (d), (a), (b), (c)",
+      "(B) (a), (b), (c), (d)",
+      "(C) (b), (c), (d), (a)",
+      "(D) (c), (d), (a), (b)"
+    ],
+    correct: 0,
+    solution: "सही उत्तर (A): धन्ना (1415), पीपा (1425), लालदास (1540), दादूदयाल (1544) — यही सही कालक्रम है।"
+  },
+  {
+    num: 13,
+    text: "सूची-I को सूची-II से सुमेलित करें :",
+    sub: `सूची-I: (a) सिलिसेढ़ झील (b) ऋषभदेव (c) कुम्भलगढ़ (d) रणकपुर
+सूची-II: (i) उदयपुर (ii) अलवर (iii) पाली (iv) राजसमंद`,
+    options: [
+      "(A) (a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)",
+      "(B) (a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+      "(C) (a)-(ii), (b)-(i), (c)-(iv), (d)-(iii)",
+      "(D) (a)-(ii), (b)-(i), (c)-(iii), (d)-(iv)"
+    ],
+    correct: 2,
+    solution: "सही उत्तर (C): सिलिसेढ़ झील – अलवर, ऋषभदेव (धुलेव) – उदयपुर, कुम्भलगढ़ – राजसमंद, रणकपुर के जैन मंदिर – पाली।"
+  },
+  {
+    num: 24,
+    text: "अभिकथन A : राजस्थान के खनिज संसाधन विविध हैं तथा विभिन्न प्रदेशों में वितरित हैं।",
+    sub: "कारण R : राजस्थान देश में कैल्साइट का अग्रणी उत्पादक है।",
+    options: [
+      "(A) A सही नहीं है लेकिन R सही है।",
+      "(B) A और R दोनों सही हैं और R, A की सही व्याख्या है।",
+      "(C) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है।",
+      "(D) A सही है लेकिन R सही नहीं है।"
+    ],
+    correct: 2,
+    solution: "सही उत्तर (C): राजस्थान खनिजों का अजायबघर है (A सही) और यह कैल्साइट का अग्रणी उत्पादक भी है (R सही)। परंतु R, A की व्याख्या नहीं करता।"
+  },
+  {
+    num: 27,
+    text: "साबरमती नदी के बारे में कौन से कथन सत्य हैं?",
+    sub: "(a) यह प्रमुख पश्चिमवाही नदी है  (b) पनम इसकी प्रमुख सहायक नदी है  (c) उद्गम अरावली श्रृंखला में  (d) लंबाई राजस्थान में गुजरात से अधिक",
+    options: [
+      "(A) (c) और (d)",
+      "(B) (a) और (b)",
+      "(C) (a) और (c)",
+      "(D) (b) और (d)"
+    ],
+    correct: 2,
+    solution: "सही उत्तर (C): साबरमती पश्चिमवाही नदी है और इसका उद्गम उदयपुर में अरावली से है। पनम इसकी सहायक नहीं (वाकल, हथमती हैं) और गुजरात में इसकी लम्बाई राजस्थान से कहीं अधिक है।"
+  },
+  {
+    num: 38,
+    text: "थॉर्नथवे के जलवायु प्रदेशों के अनुसार चुरू, अजमेर, बून्दी, सवाई माधोपुर और टोंक जिले किस जलवायु प्रदेश में हैं?",
+    sub: "",
+    options: [
+      "(A) DA'w",
+      "(B) EA'd",
+      "(C) CA'w",
+      "(D) DB'w"
+    ],
+    correct: 0,
+    solution: "सही उत्तर (A) DA'w: थॉर्नथवेट के वर्गीकरण में DA'w जलवायु प्रदेश में राजस्थान का मध्य-पूर्वी भाग — अजमेर, टोंक, बूंदी, सवाई माधोपुर आदि शामिल हैं।"
+  },
+  {
+    num: 39,
+    text: "जल संरक्षण की परंपरागत विधियों को सुमेलित करें :",
+    sub: `सूची-I: (a) बावड़ी (b) जोहड़ (c) टांका (d) कुण्ड
+सूची-II: (i) विशिष्ट सीढ़ीकुएं (ii) लघु मिट्टी के बांध (iii) बेलनाकार भूमिगत कुएं/गड्डे (iv) तश्तरीनुमा`,
+    options: [
+      "(A) (a)-(iii), (b)-(ii), (c)-(i), (d)-(iv)",
+      "(B) (a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)",
+      "(C) (a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+      "(D) (a)-(ii), (b)-(iii), (c)-(iv), (d)-(i)"
+    ],
+    correct: 2,
+    solution: "सही उत्तर (C): बावड़ी = सीढ़ीनुमा कुएं, जोहड़ = मिट्टी के छोटे बांध, टांका = बेलनाकार वर्षाजल भण्डारण गड्ढा, कुण्ड = तश्तरीनुमा जल संग्रहण संरचना।"
+  },
+  {
+    num: 41,
+    text: "सूची-I (राजस्थान की महत्वपूर्ण हस्तियाँ) को सूची-II से सुमेलित करें :",
+    sub: `सूची-I: (a) पीरू सिंह (b) विजय सिंह पथिक (c) कृपाल सिंह शेखावत (d) अल्लाह जिलाई बाई
+सूची-II: (i) परमवीर चक्र (ii) बिजोलिया आंदोलन (iii) लोक गायक (iv) ब्ल्यू पॉटरी`,
+    options: [
+      "(A) (a)-(iii), (b)-(ii), (c)-(i), (d)-(iv)",
+      "(B) (a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)",
+      "(C) (a)-(ii), (b)-(iii), (c)-(iv), (d)-(i)",
+      "(D) (a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)"
+    ],
+    correct: 3,
+    solution: "सही उत्तर (D): मेजर पीरू सिंह – परमवीर चक्र, विजय सिंह पथिक – बिजोलिया आंदोलन, कृपाल सिंह शेखावत – ब्ल्यू पॉटरी, अल्लाह जिलाई बाई – मांड गायिका (लोक गायक)।"
+  },
+  {
+    num: 51,
+    text: "जनगणना 2011 के अनुसार जनजातीय आबादी के अवरोही क्रम में व्यवस्थित करें :",
+    sub: "(a) उदयपुर  (b) बांसवाड़ा  (c) डूंगरपुर  (d) प्रतापगढ़",
+    options: [
+      "(A) (d), (a), (b), (c)",
+      "(B) (a), (b), (c), (d)",
+      "(C) (b), (c), (d), (a)",
+      "(D) (c), (d), (a), (b)"
+    ],
+    correct: 1,
+    solution: "सही उत्तर (B): 2011 जनगणना में ST जनसंख्या के घटते क्रम में: उदयपुर > बांसवाड़ा > डूंगरपुर > प्रतापगढ़।"
+  },
+  {
+    num: 52,
+    text: "वन प्रबंधन के दृष्टिकोण से राजस्थान को कितने वन्यजीव मंडलों में बांटा गया है?",
+    sub: "",
+    options: [
+      "(A) 18",
+      "(B) 15",
+      "(C) 17",
+      "(D) 16"
+    ],
+    correct: 3,
+    solution: "सही उत्तर (D) 16: वन प्रशासन सुगमता के लिए राजस्थान वन विभाग ने राज्य को 16 वन्यजीव मंडलों (Wildlife Circles) में विभाजित किया है।"
+  },
+  {
+    num: 53,
+    text: "तापीय विद्युत परियोजनाओं को सुमेलित करें :",
+    sub: `सूची-I: (a) सूरतगढ़ (b) छाबड़ा (c) कालीसिंध (d) गुरहा/गुढ़ा
+सूची-II: (i) झालावाड़ (ii) बीकानेर (iii) गंगानगर (iv) बारां`,
+    options: [
+      "(A) (a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)",
+      "(B) (a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)",
+      "(C) (a)-(iv), (b)-(iii), (c)-(i), (d)-(ii)",
+      "(D) (a)-(iii), (b)-(iv), (c)-(ii), (d)-(i)"
+    ],
+    correct: 0,
+    solution: "सही उत्तर (A): सूरतगढ़ – श्रीगंगानगर, छबड़ा – बारां, कालीसिंध – झालावाड़, गुढ़ा लिग्नाइट – बीकानेर।"
+  },
+  {
+    num: 55,
+    text: "राजस्थान में दुर्गों के संदर्भ में सही कथनों की पहचान करें :",
+    sub: "(a) गिरि दुर्ग ऊंचे पर्वतों में स्थित दुर्ग  (b) सैन्य दुर्ग वह जहां सैनिक रहते हैं  (c) वन दुर्ग मैदानी क्षेत्र में किन्तु अगम्य  (d) धान्वन दुर्ग चारों ओर जल से घिरा",
+    options: [
+      "(A) (b) और (d)",
+      "(B) (a) और (d)",
+      "(C) (b) और (c)",
+      "(D) (a) और (b)"
+    ],
+    correct: 3,
+    solution: "सही उत्तर (D): (a) और (b) सत्य हैं। (c) गलत — वन दुर्ग घने जंगल में होता है। (d) गलत — जल से घिरे दुर्ग को 'जल दुर्ग' कहते हैं; धान्वन दुर्ग मरुस्थल में होता है।"
+  },
+  {
+    num: 57,
+    text: "राजस्थान की एकमात्र सदानीरा / वर्षवाही (बारहमासी) नदी कौन सी है ?",
+    sub: "",
+    options: [
+      "(A) साबरमती",
+      "(B) चंबल",
+      "(C) लूणी",
+      "(D) बाणगंगा"
+    ],
+    correct: 1,
+    solution: "सही उत्तर (B) चंबल: चर्मण्यवती (चंबल) राजस्थान की एकमात्र सदानीरा नदी है जिसमें वर्ष भर जल प्रवाहित रहता है।"
+  },
+  {
+    num: 58,
+    text: "केवलादेव घाना राष्ट्रीय उद्यान के बारे में कौन से कथन सत्य हैं?",
+    sub: "(a) पक्षियों के स्वर्ग के रूप में जाना जाता है  (b) 1981 में संरक्षित पक्षी अभ्यारण्य घोषित  (c) विश्व विरासत स्थल भी है  (d) 1985 में रामसर स्थल घोषित",
+    options: [
+      "(A) (a) और (c)",
+      "(B) (a), (c) और (d)",
+      "(C) (b), (c) और (d)",
+      "(D) (a) और (d)"
+    ],
+    correct: 0,
+    solution: "सही उत्तर (A): (a) पक्षियों का स्वर्ग — सत्य। (c) 1985 में UNESCO विश्व धरोहर — सत्य। (b) गलत — 1956 में अभ्यारण्य, 1981 में राष्ट्रीय उद्यान बना। (d) गलत — 1981 में रामसर साइट घोषित।"
+  },
+  {
+    num: 60,
+    text: "अभिकथन A : बेर के वृक्ष में अत्यधिक छंटाई की जाती है जो नई शाखाओं की वृध्दि सुगम करती है।",
+    sub: "कारण R : राजस्थान में बेर की छंटाई का श्रेष्ठ समय दिसंबर से जनवरी है।",
+    options: [
+      "(A) A सही नहीं है लेकिन R सही है।",
+      "(B) A और R दोनों सही हैं और R, A की सही व्याख्या है।",
+      "(C) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है।",
+      "(D) A सही है लेकिन R सही नहीं है।"
+    ],
+    correct: 3,
+    solution: "सही उत्तर (D): बेर में प्रूनिंग आवश्यक है (A सही)। परंतु राजस्थान में बेर छंटाई का उपयुक्त समय मध्य अप्रैल से मई है (सुसुप्तावस्था में), दिसंबर-जनवरी नहीं — अतः R गलत।"
+  },
+  {
+    num: 61,
+    text: "अभिकथन A : हुरड़ा सम्मेलन की अध्यक्षता जगत सिंह II द्वारा की गई थी।",
+    sub: "कारण R : हुरड़ा सम्मेलन राजस्थान के विभिन्न शासकों के मध्य एकता बनाए रखने का सफल प्रयास था।",
+    options: [
+      "(A) A सही नहीं है लेकिन R सही है।",
+      "(B) A और R दोनों सही हैं और R, A की सही व्याख्या है।",
+      "(C) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है।",
+      "(D) A सही है लेकिन R सही नहीं है।"
+    ],
+    correct: 3,
+    solution: "सही उत्तर (D): 17 जुलाई 1734 को मराठों के विरुद्ध हुरड़ा सम्मेलन की अध्यक्षता मेवाड़ के महाराणा जगत सिंह II ने की (A सही)। परंतु आपसी मतभेदों से यह सम्मेलन 'असफल' रहा — R गलत।"
+  },
+  {
+    num: 63,
+    text: "अभिकथन A : राजस्थान में अधिकांश आधुनिक सूती वस्त्र मिलें सरकार की सहायता के बिना स्थापित की गई हैं।",
+    sub: "कारण R : सूती वस्त्र राजस्थान का परंपरागत और प्राचीन उद्योग है।",
+    options: [
+      "(A) A सही नहीं है लेकिन R सही है।",
+      "(B) A और R दोनों सही हैं और R, A की सही व्याख्या है।",
+      "(C) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है।",
+      "(D) A सही है लेकिन R सही नहीं है।"
+    ],
+    correct: 2,
+    solution: "सही उत्तर (C): दोनों कथन सत्य हैं — अधिकांश सूती मिलें निजी (A सही), और यह सबसे प्राचीन उद्योग है (R सही)। परंतु R, A का कारण नहीं है।"
+  },
+  {
+    num: 64,
+    text: "टंगस्टन के बारे में कौन से कथन सत्य हैं?",
+    sub: "(a) अति सामान्य खनिज जिसकी कोई रणनीतिक महत्ता नहीं  (b) वोलफ्रेमाइट अयस्क से प्राप्त  (c) ग्रेनाईट तथा पैगमेटाइट चट्टानों में  (d) मुख्य निक्षेप भीलवाड़ा और अलवर में",
+    options: [
+      "(A) (c) और (d)",
+      "(B) (a) और (b)",
+      "(C) (a) और (d)",
+      "(D) (b) और (c)"
+    ],
+    correct: 3,
+    solution: "सही उत्तर (D): टंगस्टन सामरिक दृष्टि से अत्यंत महत्वपूर्ण खनिज है (a गलत)। मुख्य भण्डार नागौर (डेगाना) और सिरोही में हैं, अलवर/भीलवाड़ा में नहीं (d गलत)। (b) और (c) सत्य हैं।"
+  },
+  {
+    num: 66,
+    text: "राजस्थान के भौतिक प्रदेशों को दक्षिण-पूर्व से उत्तर-पश्चिम में व्यवस्थित करें :",
+    sub: "(a) हाड़ौती पठार  (b) बनास मैदान  (c) अरावली पर्वतमाला  (d) पश्चिमी रेतीला मैदान",
+    options: [
+      "(A) (d), (a), (b), (c)",
+      "(B) (a), (b), (c), (d)",
+      "(C) (b), (c), (d), (a)",
+      "(D) (c), (d), (a), (b)"
+    ],
+    correct: 1,
+    solution: "सही उत्तर (B): दक्षिण-पूर्व से उत्तर-पश्चिम: हाड़ौती पठार → बनास मैदान → अरावली → पश्चिमी रेतीला मैदान (थार)।"
+  },
+  {
+    num: 73,
+    text: "अभिकथन A : राजस्थान मेलों और पर्वों की भूमि है।",
+    sub: "कारण R : प्रमुख मेलें — तीज, गणगौर, राजस्थान दिवस, पुष्कर मेला तथा ऊँट पर्व हैं।",
+    options: [
+      "(A) A सही नहीं है लेकिन R सही है।",
+      "(B) A और R दोनों सही हैं और R, A की सही व्याख्या है।",
+      "(C) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है।",
+      "(D) A सही है लेकिन R सही नहीं है।"
+    ],
+    correct: 1,
+    solution: "सही उत्तर (B): राजस्थान 'रंगीलो राजस्थान' — मेलों-त्योहारों की भूमि है (A सही)। R इसका प्रत्यक्ष प्रमाण है और A की सही व्याख्या करता है।"
+  },
+  {
+    num: 75,
+    text: "राजस्थान का कौन सा जिला उद्यान कृषि उत्पादन में अग्रणी है और 'मिनी-नागपुर' कहलाता है ?",
+    sub: "",
+    options: [
+      "(A) झालावाड़",
+      "(B) भीलवाड़ा",
+      "(C) चित्तौड़",
+      "(D) सवाई माधोपुर"
+    ],
+    correct: 0,
+    solution: "सही उत्तर (A) झालावाड़: संतरा उत्पादन में सर्वाधिक योगदान के कारण झालावाड़ को राजस्थान का 'मिनी-नागपुर' कहा जाता है।"
+  },
+  {
+    num: 76,
+    text: "कृषि जलवायु प्रदेशों को दक्षिण से उत्तर के क्रम में व्यवस्थित करें :",
+    sub: "(a) अर्ध-शुष्क पूर्वी मैदान  (b) सिंचित उत्तरी-पश्चिमी मैदान  (c) आर्द्र दक्षिणी मैदान  (d) उप-आर्द्र दक्षिणी मैदान",
+    options: [
+      "(A) (d), (a), (b), (c)",
+      "(B) (a), (b), (c), (d)",
+      "(C) (b), (c), (d), (a)",
+      "(D) (c), (d), (a), (b)"
+    ],
+    correct: 3,
+    solution: "सही उत्तर (D): दक्षिण से उत्तर: आर्द्र दक्षिणी मैदान (बांसवाड़ा) → उप-आर्द्र दक्षिणी मैदान (उदयपुर) → अर्ध-शुष्क पूर्वी मैदान (जयपुर) → सिंचित उत्तरी-पश्चिमी मैदान (गंगानगर)।"
+  },
+  {
+    num: 84,
+    text: "राजस्थान में आभूषण निर्माण के बारे में कौन से कथन सत्य हैं?",
+    sub: "(a) जयपुर आभूषण व्यवसाय के लिए विश्व प्रसिद्ध  (b) नाथद्वारा स्वर्ण आभूषणों के लिए  (c) महीन धातु तारों से बने आभूषण = तारकशी  (d) अलवर थेवा कला के लिए प्रसिद्ध",
+    options: [
+      "(A) (b) और (c)",
+      "(B) (b) और (d)",
+      "(C) (a) और (c)",
+      "(D) (a) और (d)"
+    ],
+    correct: 2,
+    solution: "सही उत्तर (C): जयपुर – मीनाकारी/रत्न आभूषण (a सही)। तारकशी – नाथद्वारा की चांदी के बारीक तारों की कला (c सही)। नाथद्वारा स्वर्ण के लिए नहीं (b गलत), और थेवा कला – प्रतापगढ़ की है, अलवर की नहीं (d गलत)।"
+  },
+  {
+    num: 85,
+    text: "ऐतिहासिक घटनाओं को कालक्रमानुसार व्यवस्थित करें :",
+    sub: "(a) तुंगा का युद्ध  (b) बगरू का युद्ध  (c) हुरड़ा सम्मेलन  (d) औरंगजेब की मृत्यु",
+    options: [
+      "(A) (d), (c), (b), (a)",
+      "(B) (c), (d), (a), (b)",
+      "(C) (d), (c), (a), (b)",
+      "(D) (c), (d), (b), (a)"
+    ],
+    correct: 0,
+    solution: "सही उत्तर (A): औरंगजेब मृत्यु (1707) → हुरड़ा सम्मेलन (1734) → बगरू युद्ध (1748) → तुंगा युद्ध (1787)।"
+  }
+];
+
+// ===================== STATE =====================
+let studentName = '';
+let answers = new Array(questions.length).fill(-1);
+let timerInterval = null;
+let totalSeconds = 30 * 60;
+let timeLeft = totalSeconds;
+let submitted = false;
+
+// Leaderboard (session storage simulation)
+let leaderboard = JSON.parse(sessionStorage.getItem('raj_lb') || '[]');
+
+// ===================== WATERMARK =====================
+(function() {
+  const wm = document.getElementById('wmBg');
+  const texts = ['RAJASTHAN OLD PAPER', 'राजस्थान', 'KRISHI PARYAVEKSHAK', 'OLD PAPER'];
+  for(let i=0;i<20;i++){
+    const s = document.createElement('span');
+    s.textContent = texts[i%texts.length];
+    s.style.left = (Math.random()*110-5)+'%';
+    s.style.top = (Math.random()*110-5)+'%';
+    wm.appendChild(s);
+  }
+})();
+
+// ===================== START =====================
+function startTest() {
+  const inp = document.getElementById('studentName').value.trim();
+  if(!inp) { alert('कृपया अपना नाम दर्ज करें!'); return; }
+  studentName = inp;
+  document.getElementById('currentStudentName').textContent = studentName;
+  document.getElementById('page-start').style.display = 'none';
+  document.getElementById('page-test').style.display = 'block';
+  renderQuestions();
+  startTimer();
+}
+
+// ===================== RENDER QUESTIONS =====================
+function renderQuestions() {
+  const container = document.getElementById('questionsContainer');
+  container.innerHTML = '';
+  questions.forEach((q, qi) => {
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    card.id = 'qcard-'+qi;
+    const optLetters = ['A','B','C','D'];
+    let optionsHTML = '<div class="options-grid">';
+    q.options.forEach((opt, oi) => {
+      const cleanOpt = opt.replace(/^\([ABCDE]\)\s*/, '');
+      optionsHTML += `<button class="option-btn" id="opt-${qi}-${oi}" onclick="selectAnswer(${qi},${oi})">
+        <span class="opt-label">${optLetters[oi]}</span>
+        <span>${cleanOpt}</span>
+      </button>`;
+    });
+    optionsHTML += '</div>';
+    card.innerHTML = `
+      <div class="q-header">
+        <span class="q-num">प्र. ${q.num}</span>
+        <span class="q-text">${q.text}</span>
+      </div>
+      ${q.sub ? `<div class="q-sub">${q.sub.replace(/\n/g,'<br>')}</div>` : ''}
+      ${optionsHTML}
+      <div class="solution-box" id="sol-${qi}">
+        <div class="sol-header">💡 व्याख्या</div>
+        ${q.solution}
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+// ===================== SELECT ANSWER =====================
+function selectAnswer(qi, oi) {
+  if(submitted) return;
+  answers[qi] = oi;
+  const optLetters = ['A','B','C','D'];
+  for(let i=0;i<4;i++){
+    const btn = document.getElementById(`opt-${qi}-${i}`);
+    btn.classList.toggle('selected', i===oi);
+  }
+  updateProgress();
+}
+
+function updateProgress() {
+  const answered = answers.filter(a=>a!==-1).length;
+  document.getElementById('progressText').textContent = `${answered} / ${questions.length} उत्तर दिए`;
+  document.getElementById('progressFill').style.width = (answered/questions.length*100)+'%';
+}
+
+// ===================== TIMER =====================
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    const m = Math.floor(timeLeft/60);
+    const s = timeLeft%60;
+    const disp = document.getElementById('timerDisplay');
+    disp.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    if(timeLeft<=300) disp.classList.add('warning');
+    if(timeLeft<=0) { clearInterval(timerInterval); submitTest(); }
+  }, 1000);
+}
+
+// ===================== SUBMIT =====================
+function submitTest() {
+  if(submitted) return;
+  submitted = true;
+  clearInterval(timerInterval);
+  document.getElementById('submitBtn').disabled = true;
+
+  let correct = 0, wrong = 0, skip = 0;
+  answers.forEach((a,i) => {
+    if(a===-1) skip++;
+    else if(a===questions[i].correct) correct++;
+    else wrong++;
+  });
+
+  // Add to leaderboard
+  const entry = { name: studentName, correct, wrong, skip, pct: Math.round(correct/questions.length*100) };
+  leaderboard.push(entry);
+  leaderboard.sort((a,b)=>b.correct-a.correct);
+  sessionStorage.setItem('raj_lb', JSON.stringify(leaderboard.slice(0,20)));
+
+  const myRank = leaderboard.findIndex(e=>e.name===studentName && e.correct===correct)+1;
+
+  // Show result
+  document.getElementById('page-test').style.display = 'none';
+  document.getElementById('page-result').style.display = 'block';
+
+  document.getElementById('resultName').textContent = '🎓 ' + studentName;
+  document.getElementById('resultScore').textContent = correct;
+  document.getElementById('resCorrect').textContent = correct;
+  document.getElementById('resWrong').textContent = wrong;
+  document.getElementById('resSkip').textContent = skip;
+
+  const pct = Math.round(correct/questions.length*100);
+  const gradeEl = document.getElementById('resultGrade');
+  if(pct>=80) { gradeEl.textContent='🏅 उत्कृष्ट (Excellent)'; gradeEl.style.background='#E8F5EE'; gradeEl.style.color='#1B7A3E'; }
+  else if(pct>=60) { gradeEl.textContent='👍 अच्छा (Good)'; gradeEl.style.background='#FFF3E8'; gradeEl.style.color='#E85D00'; }
+  else if(pct>=40) { gradeEl.textContent='📚 औसत (Average)'; gradeEl.style.background='#FFF9E8'; gradeEl.style.color='#B8960C'; }
+  else { gradeEl.textContent='⚠️ और अभ्यास करें'; gradeEl.style.background='#FDEAEA'; gradeEl.style.color='#C0392B'; }
+
+  const rankMedals = ['🥇','🥈','🥉'];
+  document.getElementById('rankBadge').textContent = (myRank<=3?rankMedals[myRank-1]:'🏆') + ' रैंक: #' + myRank + ' ('+pct+'% अंक)';
+
+  // Render leaderboard
+  const lbEl = document.getElementById('leaderboard');
+  lbEl.style.display = 'block';
+  const lbList = document.getElementById('lbList');
+  lbList.innerHTML = '';
+  leaderboard.slice(0,10).forEach((e,i) => {
+    const row = document.createElement('div');
+    const isCurrent = e.name===studentName && e.correct===correct;
+    row.className = 'lb-row' + (isCurrent?' current':'');
+    const rankClass = i===0?'gold':i===1?'silver':i===2?'bronze':'other';
+    const medals = ['🥇','🥈','🥉'];
+    row.innerHTML = `
+      <div class="lb-rank ${rankClass}">${i<3?medals[i]:'#'+(i+1)}</div>
+      <div class="lb-name">${e.name}${isCurrent?' 👈':''}</div>
+      <div style="text-align:right;">
+        <div class="lb-score">${e.correct}/26</div>
+        <div class="lb-pct">${e.pct}%</div>
+      </div>
+    `;
+    lbList.appendChild(row);
+  });
+
+  // Mark answers visually
+  questions.forEach((q,qi) => {
+    for(let oi=0;oi<4;oi++){
+      const btn = document.getElementById(`opt-${qi}-${oi}`);
+      if(btn) btn.disabled = true;
+    }
+  });
+}
+
+// ===================== SOLUTIONS =====================
+function showSolutions() {
+  const area = document.getElementById('solutionsArea');
+  area.style.display = 'block';
+  const cont = document.getElementById('solutionsContainer');
+  cont.innerHTML = '';
+  const optLetters = ['A','B','C','D'];
+  questions.forEach((q,qi) => {
+    const myAns = answers[qi];
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    let optsHTML = '<div class="options-grid">';
+    q.options.forEach((opt, oi) => {
+      const cleanOpt = opt.replace(/^\([ABCDE]\)\s*/, '');
+      let cls = 'option-btn';
+      if(oi===q.correct) cls+=' correct';
+      else if(oi===myAns && myAns!==q.correct) cls+=' wrong';
+      optsHTML += `<button class="${cls}" disabled>
+        <span class="opt-label">${optLetters[oi]}</span>
+        <span>${cleanOpt}</span>
+        ${oi===q.correct?' ✅':''}${oi===myAns&&myAns!==q.correct?' ❌':''}
+      </button>`;
+    });
+    optsHTML += '</div>';
+    card.innerHTML = `
+      <div class="q-header">
+        <span class="q-num">प्र. ${q.num}</span>
+        <span class="q-text">${q.text}</span>
+      </div>
+      ${q.sub ? `<div class="q-sub">${q.sub.replace(/\n/g,'<br>')}</div>` : ''}
+      ${optsHTML}
+      <div class="solution-box" style="display:block;">
+        <div class="sol-header">💡 व्याख्या</div>
+        ${q.solution}
+      </div>
+    `;
+    cont.appendChild(card);
+  });
+  area.scrollIntoView({behavior:'smooth'});
+}
+
+// ===================== RESTART =====================
+function restartTest() {
+  answers = new Array(questions.length).fill(-1);
+  submitted = false;
+  timeLeft = totalSeconds;
+  studentName = '';
+  document.getElementById('studentName').value = '';
+  document.getElementById('page-result').style.display = 'none';
+  document.getElementById('page-start').style.display = 'block';
+  document.getElementById('solutionsArea').style.display = 'none';
+  document.getElementById('timerDisplay').textContent = '30:00';
+  document.getElementById('timerDisplay').classList.remove('warning');
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressText').textContent = '0 / 26 उत्तर दिए';
+  clearInterval(timerInterval);
+}
+</script>
+</body>
+</html>
